@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Task Book</string>
     <string name="add_task">Add</string>
+    <string name="task_id">Task Id:</string>
+    <string name="task_title">Task Title:</string>
+    <string name="delete">Delete</string>
 </resources>

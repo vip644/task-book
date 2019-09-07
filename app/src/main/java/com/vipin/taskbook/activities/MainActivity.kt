@@ -30,12 +30,15 @@ class MainActivity : AppCompatActivity() {
             addTaskInList()
         }
 
-        mTaskListAdapter = TaskListAdapter()
+        mTaskListAdapter = TaskListAdapter {
+            val taskId = it.id
+            startActivity(TaskDetailActivity.launchIntent(this, taskId))
+        }
         taskRecyclerView.layoutManager = LinearLayoutManager(this)
         taskRecyclerView.adapter = mTaskListAdapter
 
         taskDao.getTaskList().observe(this, Observer<List<Tasks>> {
-            it?.forEach { mTaskListAdapter.addTask(it) }
+            mTaskListAdapter
         })
     }
 
