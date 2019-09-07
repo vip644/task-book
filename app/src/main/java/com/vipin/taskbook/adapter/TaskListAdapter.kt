@@ -16,8 +16,10 @@ class TaskListAdapter : RecyclerView.Adapter<TaskListAdapter.ViewHolder>() {
     private val taskList: MutableList<Tasks> = ArrayList()
 
     fun addTask(tasks: Tasks){
-        taskList.add(tasks)
-        notifyDataSetChanged()
+        if (!taskList.contains(tasks)) {
+            taskList.add(tasks)
+            notifyDataSetChanged()
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

@@ -19,7 +19,7 @@
         tools:layout_editor_absoluteX="15dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/typeTask"
+            android:id="@+id/typeInputTask"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
