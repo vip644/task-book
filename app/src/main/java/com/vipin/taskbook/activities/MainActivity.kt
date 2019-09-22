@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         taskRecyclerView.adapter = mTaskListAdapter
 
         taskDao.getTaskList().observe(this, Observer<List<Tasks>> {
-            mTaskListAdapter
+            it?.forEach { mTaskListAdapter.addTask(it) }
         })
     }
 
